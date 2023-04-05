@@ -11,7 +11,7 @@ public class QuickSort : ISortStrategy
         QuickSortArray(arr, 0, arr.Length - 1);
     }
 
-    static int partition(int[] arr, int low, int high)
+    static int Partition(int[] arr, int low, int high)
     {
         int pivot = arr[high];
         int i = (low - 1);
@@ -32,10 +32,10 @@ public class QuickSort : ISortStrategy
     {
         if (low < high)
         {
-            int pi = partition(arr, low, high);
+            int pivot = Partition(arr, low, high);
 
-            QuickSortArray(arr, low, pi - 1);
-            QuickSortArray(arr, pi + 1, high);
+            QuickSortArray(arr, low, pivot - 1);
+            QuickSortArray(arr, pivot + 1, high);
         }
     } 
 }
