@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortingLib", "SortingLib\So
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp", "WpfApp\WpfApp.csproj", "{CF419E76-895E-493C-BDF5-582DDA9919E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Try", "Try\Try.csproj", "{A639F949-4843-43B5-99C8-619D682A4502}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayExtensionsLib", "ArrayExtensionsLib\ArrayExtensionsLib.csproj", "{C4746864-8AFD-4200-8D53-D407BC0CC1FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayExtensionsLib", "ArrayExtensionsLib\ArrayExtensionsLib.csproj", "{C4746864-8AFD-4200-8D53-D407BC0CC1FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{CF419E76-895E-493C-BDF5-582DDA9919E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF419E76-895E-493C-BDF5-582DDA9919E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF419E76-895E-493C-BDF5-582DDA9919E7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A639F949-4843-43B5-99C8-619D682A4502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A639F949-4843-43B5-99C8-619D682A4502}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A639F949-4843-43B5-99C8-619D682A4502}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A639F949-4843-43B5-99C8-619D682A4502}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C4746864-8AFD-4200-8D53-D407BC0CC1FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C4746864-8AFD-4200-8D53-D407BC0CC1FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4746864-8AFD-4200-8D53-D407BC0CC1FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
