@@ -5,8 +5,133 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Height="350" 
+        Width="800"
+        ResizeMode="NoResize">
 
+    <Grid Background="#F8F4EA">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="600"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <Label Content="Find Suitable Sort"
+               FontSize="20"
+               FontWeight="DemiBold"
+               VerticalAlignment="Center"
+               Foreground="#579BB1"
+               Margin="20,0"/>
+
+        <!-- Array input and Warnings -->
+        <StackPanel Grid.Row="1"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch">
+            <Border
+                Background="#DDFFBB"
+                BorderBrush="#E1D7C6"
+                BorderThickness="1"
+                Margin="20,15,20,0"
+                Height="30">
+
+                <TextBox x:Name="ArrayInputTB" 
+                     Grid.Row="1"
+                     Text="{Binding ArrayInput}"  
+                     AcceptsReturn="False"
+                     VerticalAlignment="Stretch"
+                     BorderThickness="0"
+                     FontSize="16"/>
+            </Border>
+
+            <Label Content="{Binding WarningMessage}"
+                   Foreground="Red"
+                   FontSize="12"
+                   Margin="20,0,0,0"/>
+        </StackPanel>
+        
+        
+
+        <!-- Speed and Memory Usage info -->
+        <StackPanel Grid.Row="2">
+            <!-- For future -->
+        </StackPanel>
+
+        <!-- Choose and Sort -->
+        <StackPanel Grid.Row="3"
+                    Orientation="Horizontal"
+                    
+                    Margin="40,10,20,55">
+            
+            <Label Content="Choose sorting algorithm"
+                   VerticalAlignment="Center"
+                   FontSize="16"
+                   Foreground="#579BB1"
+                   Width="200"/>
+
+            <ComboBox x:Name="SortOptionCB" 
+                      Text="{Binding SortOptionText}"
+                      Width="150"
+                      Margin="20,0"
+                      BorderBrush="#ECE8DD"
+                      Background="#E1D7C6"
+                      FontSize="16">
+                
+                <TextBlock Text="Bubble Sort"/>
+                <TextBlock Text="Shaker Sort"/>
+                <TextBlock Text="Insertion Sort"/>
+                <TextBlock Text="Selection Sort"/>
+                <TextBlock Text="Stooge Sort"/>
+                <TextBlock Text="Shell Sort"/>
+                <TextBlock Text="Merge Sort"/>
+                <TextBlock Text="Quick Sort"/>
+                
+            </ComboBox>
+
+            <Button x:Name="sortButton"
+                    HorizontalAlignment="Left"
+                    Content="Sort"
+                    Width="150"
+                    Margin="0,0,0,0"
+                    Background="#579BB1"
+                    BorderBrush="#ECE8DD"
+                    Foreground="#F8F4EA"
+                    FontSize="16"
+                    FontWeight="Bold"/>
+        </StackPanel>
+
+        <!-- Array Generator-->
+        <StackPanel Orientation="Vertical"
+                        Grid.Column="1"
+                        Grid.RowSpan="4"
+                        Background="#E1D7C6">
+
+            <Label Content="Generate Array"
+                   FontSize="20"
+                   HorizontalAlignment="Center"
+                   FontWeight="DemiBold"
+                   Margin="10,10,10,20"/>
+
+            <!-- Generated array settings -->
+            <StackPanel Orientation="Vertical"
+                        Height="100">
+                <!-- For future -->
+            </StackPanel>
+
+            <Button Content="Generate"
+                    Margin="20"
+                    Height="30"
+                    Background="#ECE8DD"
+                    FontSize="16"
+                    FontWeight="DemiBold"/>
+
+        </StackPanel>
     </Grid>
 </Window>

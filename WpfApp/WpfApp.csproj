@@ -7,4 +7,9 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ArrayExtensionsLib\ArrayExtensionsLib.csproj" />
+    <ProjectReference Include="..\SortingLib\SortingLib.csproj" />
+  </ItemGroup>
+
 </Project>
