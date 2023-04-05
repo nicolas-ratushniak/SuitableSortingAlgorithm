@@ -79,8 +79,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             WarningMessage = "";
 
             _context.SetStrategy(_strategy);
-            _context.Sort(array);
-            ArrayInput = ArrayDecoder.ArrayToString(array);
+            _context.Sort(array!);
+            ArrayInput = ArrayDecoder.ArrayToString(array!);
         }
         else if (string.IsNullOrEmpty(ArrayInput))
         {
