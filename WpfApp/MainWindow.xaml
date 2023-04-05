@@ -95,7 +95,8 @@
                 
             </ComboBox>
 
-            <Button x:Name="sortButton"
+            <Button Name="SortButton"
+                    Click="SortButton_Click"
                     HorizontalAlignment="Left"
                     Content="Sort"
                     Width="150"
@@ -125,8 +126,19 @@
                 <!-- For future -->
             </StackPanel>
 
-            <Button Content="Generate"
+            <Button Name="GenerateButon"
+                    Content="Generate"
+                    Click="GenerateButon_Click"
                     Margin="20"
+                    Height="30"
+                    Background="#ECE8DD"
+                    FontSize="16"
+                    FontWeight="DemiBold"/>
+
+            <Button Name="ClearButton"
+                    Content="Clear"
+                    Click="ClearButton_Click"
+                    Margin="20,0,20,20"
                     Height="30"
                     Background="#ECE8DD"
                     FontSize="16"
