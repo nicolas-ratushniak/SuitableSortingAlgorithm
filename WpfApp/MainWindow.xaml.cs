@@ -11,39 +11,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler? PropertyChanged;
 
-    private string _arrayInput = "";
-    private string _warningMessage = "";
     private SortContext _context = new();
     private ISortStrategy _strategy;
     private ArrayGenerator _generator = new();
-
-    public string ArrayInput
-    {
-        get => _arrayInput;
-
-        set
-        {
-            if (_arrayInput != value)
-            {
-                _arrayInput = value;
-            }
-            OnPropertyChanged();
-        }
-    }
-
-    public string WarningMessage
-    {
-        get => _warningMessage;
-
-        set
-        {
-            if (_warningMessage != value)
-            {
-                _warningMessage = value;
-            }
-            OnPropertyChanged();
-        }
-    }
 
     public MainWindow()
     {
@@ -64,37 +34,37 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         var array = new int[ArraySize];
         _generator.PopulateRandomly(array, MinValue, MaxValue);
-        ArrayInput = ArrayDecoder.ArrayToString(array);
+        ArrayInputTB.Text = ArrayDecoder.ArrayToString(array);
     }
 
     private void SortButton_Click(object sender, RoutedEventArgs e)
     {
-        if (ArrayDecoder.TryParseArray(ArrayInput, out int[] array))
+        if (ArrayDecoder.TryParseArray(ArrayInputTB.Text, out int[] array))
         {
             if (_strategy is null)
             {
-                WarningMessage = "*None of sort algorithms was chosen";
+                WarningMessageLB.Content = "*None of sort algorithms was chosen";
                 return;
             }
-            WarningMessage = "";
+            WarningMessageLB.Content = "";
 
             _context.SetStrategy(_strategy);
             _context.Sort(array!);
-            ArrayInput = ArrayDecoder.ArrayToString(array!);
+            ArrayInputTB.Text = ArrayDecoder.ArrayToString(array!);
         }
-        else if (string.IsNullOrEmpty(ArrayInput))
+        else if (string.IsNullOrEmpty(ArrayInputTB.Text))
         {
-            WarningMessage = "*The array is empty";
+            WarningMessageLB.Content = "*The array is empty";
         }
         else
         {
-            WarningMessage = "*Invalid array entered";
+            WarningMessageLB.Content = "*Invalid array entered";
         }
     }
 
     private void ClearButton_Click(object sender, RoutedEventArgs e)
     {
-        ArrayInput = "";
+        ArrayInputTB.Text = "";
     }
 
     private void SortOptionCB_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)

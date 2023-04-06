@@ -44,14 +44,13 @@
 
                 <TextBox x:Name="ArrayInputTB" 
                      Grid.Row="1"
-                     Text="{Binding ArrayInput}"  
                      AcceptsReturn="False"
                      VerticalAlignment="Stretch"
                      BorderThickness="0"
                      FontSize="16"/>
             </Border>
 
-            <Label Content="{Binding WarningMessage}"
+            <Label x:Name="WarningMessageLB"
                    Foreground="Red"
                    FontSize="12"
                    Margin="20,0,0,0"/>
