@@ -39,27 +39,27 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void SortButton_Click(object sender, RoutedEventArgs e)
     {
-        if (ArrayDecoder.TryParseArray(ArrayInputTB.Text, out int[] array))
-        {
-            if (_strategy is null)
-            {
-                WarningMessageLB.Content = "*None of sort algorithms was chosen";
-                return;
-            }
-            WarningMessageLB.Content = "";
-
-            _context.SetStrategy(_strategy);
-            _context.Sort(array!);
-            ArrayInputTB.Text = ArrayDecoder.ArrayToString(array!);
-        }
-        else if (string.IsNullOrEmpty(ArrayInputTB.Text))
+        if (string.IsNullOrEmpty(ArrayInputTB.Text))
         {
             WarningMessageLB.Content = "*The array is empty";
+            return;
         }
-        else
+        if (!ArrayDecoder.TryParseArray(ArrayInputTB.Text, out int[] array))
         {
             WarningMessageLB.Content = "*Invalid array entered";
+            return;
         }
+        if (_strategy is null)
+        {
+            WarningMessageLB.Content = "*None of sort algorithms was chosen";
+            return;
+        }
+
+        WarningMessageLB.Content = "";
+
+        _context.SetStrategy(_strategy);
+        _context.Sort(array!);
+        ArrayInputTB.Text = ArrayDecoder.ArrayToString(array!);
     }
 
     private void ClearButton_Click(object sender, RoutedEventArgs e)
